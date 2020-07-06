@@ -21,3 +21,6 @@ sudo apt-get install dotnet-sdk-3.1
 sudo apt-get install nginx
 sudo service nginx start
 ```
+### Connect to server using FileZilla
+
+[https://superuser.com/a/507475](https://superuser.com/a/507475)
