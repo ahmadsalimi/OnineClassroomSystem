@@ -30,3 +30,36 @@ sudo service nginx start
 ```
 dotnet publish --configuration Release
 ```
+
+### Set as service
+
+```
+sudo nano /etc/systemd/system/classroomApi.service
+```
+
+Put this in above file
+```
+[Unit]
+Description= Classroom Api
+
+[Service]
+WorkingDirectory=/var/www/html/api
+ExecStart=/usr/bin/dotnet /var/www/html/api/ClassroomApi.dll
+Restart=always
+#Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-example
+User=root
+Environment=ASPNETCOREENVIRONMENT=Production
+Environment=DOTNETPRINTTELEMETRYMESSAGE=false
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl enable classroomApi.service
+sudo systemctl start classroomApi.service
+sudo systemctl status classroomApi.service
+```
