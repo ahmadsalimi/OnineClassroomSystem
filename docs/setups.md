@@ -1,4 +1,4 @@
-### Install dotnet core 3.1 on ubuntu 16.04
+### Install dotnet core 3.1 on Ubuntu 16.04
 
 ```
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -14,3 +14,10 @@ sudo apt-get install dotnet-sdk-3.1
 ### Host ASP.NET Core on Linux with Nginx
 
 [https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-3.1](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-3.1)
+
+### Install nginx on Ubuntu 16.04
+
+```
+sudo apt-get install nginx
+sudo service nginx start
+```
