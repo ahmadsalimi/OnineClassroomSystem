@@ -24,3 +24,9 @@ sudo service nginx start
 ### Connect to server using FileZilla
 
 [https://superuser.com/a/507475](https://superuser.com/a/507475)
+
+### Publish dotnet core application
+
+```
+dotnet publish --configuration Release
+```
