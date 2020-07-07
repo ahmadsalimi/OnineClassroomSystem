@@ -33,11 +33,12 @@ dotnet publish --configuration Release
 
 ### Set as service
 
+Create the service definition file:
 ```
 sudo nano /etc/systemd/system/classroomApi.service
 ```
 
-Put this in above file
+The following is service file for the app:
 ```
 [Unit]
 Description= Classroom Api
@@ -58,8 +59,13 @@ Environment=DOTNETPRINTTELEMETRYMESSAGE=false
 WantedBy=multi-user.target
 ```
 
+Save the file and enable the service.
 ```
 sudo systemctl enable classroomApi.service
+```
+
+Start the service and check the status:
+```
 sudo systemctl start classroomApi.service
 sudo systemctl status classroomApi.service
 ```
