@@ -56,7 +56,7 @@ namespace ClassroomApi.Controllers
         [HttpDelete]
         public void Delete(UserData userData)
         {
-            context.Remove(context.UserData.Single(data => data.Username == userData.Username && data.ClassName == userData.ClassName));
+            context.UserData.Remove(userData);
             context.SaveChanges();
         }
     }
