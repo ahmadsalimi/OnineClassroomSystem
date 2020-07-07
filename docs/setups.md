@@ -69,3 +69,9 @@ Start the service and check the status:
 sudo systemctl start classroomApi.service
 sudo systemctl status classroomApi.service
 ```
+
+Stop and restart the service:
+```Bash
+sudo systemctl stop classroomApi.service
+sudo systemctl restart classroomApi.service
+```
