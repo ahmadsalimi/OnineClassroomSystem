@@ -78,9 +78,13 @@ sudo systemctl restart classroomApi.service
 
 ### How to debug/unit test webAPi in one solution
 
-> 
+> Stackoverflow:
+>1. Start debugging Unit Test
+>2. While on the first line of your test code or before calling your local web api project
+>3. Right click on your web api project and Debug > Start new instance
 
-    1. Start debugging Unit Test
-    2. While on the first line of your test code or before calling your local web api project
-    3. Right click on your web api project and Debug > Start new instance
+### Locally connect to MySql
 
+```Bash
+mysql -u root -p --protocol=TCPC
+```
