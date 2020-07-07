@@ -1,3 +1,5 @@
 ## OnlineClassroomSystem
 
-- [Docs](docs/)
+### Documents
+
+- [Setup Steps](docs/setups.md)
