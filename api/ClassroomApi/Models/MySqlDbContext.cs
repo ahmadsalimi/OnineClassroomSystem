@@ -1,15 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using MySql.Data.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using System.Configuration;
+using MySql.Data.EntityFramework;
 
 namespace ClassroomApi.Models
 {
+    
     [DbContext(typeof(MySqlEFConfiguration))]
     public class MySqlDbContext : DbContext
     {
