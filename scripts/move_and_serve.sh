@@ -11,5 +11,5 @@ sudo rm $target -d
 unzip $source $target
 sudo rm $source
 echo "Starting service."
-sudo systemctl stop classroomApi.service
+sudo systemctl start classroomApi.service
 echo "Service Started."
