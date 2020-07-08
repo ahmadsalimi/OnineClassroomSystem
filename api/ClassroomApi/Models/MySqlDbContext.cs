@@ -14,6 +14,12 @@ namespace ClassroomApi.Models
         public MySqlDbContext(IConfiguration config)
         {
             this.config = config;
+            Database.EnsureCreated();
+        }
+
+        static MySqlDbContext()
+        {
+            System.Data.Entity.DbConfiguration.SetConfiguration(new MySqlEFConfiguration());
         }
 
         public DbSet<UserData> UserData { get; set; }
@@ -30,8 +36,12 @@ namespace ClassroomApi.Models
             modelBuilder.Entity<UserData>(entity =>
             {
                 entity.HasKey(e => new { e.Username, e.ClassName });
-                entity.Property(e => e.Username).IsRequired();
-                entity.Property(e => e.ClassName).IsRequired();
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                entity.Property(e => e.ClassName)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
         }
     }
