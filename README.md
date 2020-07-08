@@ -2,8 +2,8 @@
 
 ### Publish Dotnet Project, Upload and start service on server
 
-Use scripts folder and run following command on Windows Powershell:
-```Bash
+Use [scripts](scripts) folder and run following command on Windows Powershell:
+```Powershell
 .\deploy.ps1 <user>@<server_ip> <project_directory>
 ```
 
