@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace ClassroomApi.Controllers
 {
-    [Route("[controller]")]
+    [Route("")]
     [ApiController]
     public class UserDataController : ControllerBase
     {
@@ -27,16 +25,10 @@ namespace ClassroomApi.Controllers
 
         [Route(nameof(Add))]
         [HttpPost]
-        public object Add(UserData userData)
+        public void Add(UserData userData)
         {
             context.UserData.Add(userData);
             context.SaveChanges();
-
-            return new
-            {
-                Size = context.UserData.Count(),
-                State = "done"
-            };
         }
 
         [Route(nameof(GetClasses))]
@@ -63,7 +55,7 @@ namespace ClassroomApi.Controllers
             context.SaveChanges();
         }
 
-        [Route(nameof(GetTableNames))]
+        /*[Route(nameof(GetTableNames))]
         [HttpGet]
         public IEnumerable<string> GetTableNames()
         {
@@ -77,6 +69,6 @@ namespace ClassroomApi.Controllers
             {
                 context.Database.CloseConnection();
             }
-        }
+        }*/
     }
 }
