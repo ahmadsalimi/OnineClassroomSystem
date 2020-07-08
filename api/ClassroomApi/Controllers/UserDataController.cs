@@ -1,8 +1,11 @@
 ﻿using ClassroomApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace ClassroomApi.Controllers
@@ -58,6 +61,22 @@ namespace ClassroomApi.Controllers
         {
             context.UserData.Remove(userData);
             context.SaveChanges();
+        }
+
+        [Route(nameof(GetTableNames))]
+        [HttpGet]
+        public IEnumerable<string> GetTableNames()
+        {
+            try
+            {
+                context.Database.OpenConnection();
+                var dataTable = context.Database.GetDbConnection().GetSchema("Tables");
+                return dataTable.Select().Select(row => row["table_name"].ToString());
+            }
+            finally
+            {
+                context.Database.CloseConnection();
+            }
         }
     }
 }
