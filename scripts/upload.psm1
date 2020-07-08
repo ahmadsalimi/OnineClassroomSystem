@@ -6,11 +6,6 @@ function Upload {
 
     $VerbosePreference = "Continue"
 
-    if ([string]::IsNullOrEmpty($source))
-    {
-        return "Source is null"
-    }
-
     if ((Get-Item $source) -is [System.IO.DirectoryInfo]) {
         Write-Verbose -Message "Cannot upload directories."
         return
