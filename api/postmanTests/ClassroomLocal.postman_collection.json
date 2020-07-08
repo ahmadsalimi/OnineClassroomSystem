@@ -19,17 +19,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Ahmad\",\r\n    \"className\": \"Math\"\r\n}"
+					"raw": "{\r\n    \"username\": \"Ahmad\",\r\n    \"className\": \"AI\"\r\n}"
 				},
 				"url": {
-					"raw": "https://localhost:44371/UserData/Add",
+					"raw": "https://localhost:44371/Add",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44371",
 					"path": [
-						"UserData",
 						"Add"
 					]
 				}
@@ -42,14 +41,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44371/UserData/GetClasses?username=Ahmad",
+					"raw": "https://localhost:44371/GetClasses?username=Ahmad",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
 					"port": "44371",
 					"path": [
-						"UserData",
 						"GetClasses"
 					],
 					"query": [

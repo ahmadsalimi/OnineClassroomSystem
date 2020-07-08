@@ -22,7 +22,7 @@
 					"raw": "{\r\n    \"username\": \"Ahmad\",\r\n    \"className\": \"Math\"\r\n}"
 				},
 				"url": {
-					"raw": "http://3.17.207.89/UserData/Add",
+					"raw": "http://3.17.207.89/Add",
 					"protocol": "http",
 					"host": [
 						"3",
@@ -31,7 +31,6 @@
 						"89"
 					],
 					"path": [
-						"UserData",
 						"Add"
 					]
 				}
@@ -44,7 +43,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://3.17.207.89/UserData/GetClasses?username=Ahmad",
+					"raw": "http://3.17.207.89/GetClasses?username=Ahmad",
 					"protocol": "http",
 					"host": [
 						"3",
@@ -53,7 +52,6 @@
 						"89"
 					],
 					"path": [
-						"UserData",
 						"GetClasses"
 					],
 					"query": [
@@ -82,7 +80,7 @@
 					"raw": "{\r\n    \"username\": \"Ahmad\",\r\n    \"className\": \"Math\"\r\n}"
 				},
 				"url": {
-					"raw": "http://3.17.207.89/UserData/Delete",
+					"raw": "http://3.17.207.89/Delete",
 					"protocol": "http",
 					"host": [
 						"3",
@@ -91,7 +89,6 @@
 						"89"
 					],
 					"path": [
-						"UserData",
 						"Delete"
 					]
 				}
@@ -117,7 +114,7 @@
 					"raw": "{\r\n    \"username\": \"Ahmad\",\r\n    \"className\": \"AI\"\r\n}"
 				},
 				"url": {
-					"raw": "http://3.17.207.89/UserData/",
+					"raw": "http://3.17.207.89/",
 					"protocol": "http",
 					"host": [
 						"3",
@@ -126,7 +123,6 @@
 						"89"
 					],
 					"path": [
-						"UserData",
 						""
 					]
 				}
