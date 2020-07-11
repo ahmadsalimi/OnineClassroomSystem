@@ -1,8 +1,8 @@
 ## OnlineClassroomSystem
 
-### Publish Dotnet Project, Upload and start service on server
+### Publish dotnet api, Upload and start service on server
 
-Use [scripts](scripts) folder and run following command on Windows Powershell:
+Use [api/scripts](api/scripts) folder and run following command on Windows Powershell:
 ```Powershell
 .\deploy.ps1 <user>@<server_ip> <project_directory>
 ```
