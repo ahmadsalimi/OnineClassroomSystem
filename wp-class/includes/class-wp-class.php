@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Wp_Class
  * @subpackage Wp_Class/includes
- * @author     Your Name <email@example.com>
+ * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
 class Wp_Class {
 

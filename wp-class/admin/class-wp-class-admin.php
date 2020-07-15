@@ -18,7 +18,7 @@
  *
  * @package    Wp_Class
  * @subpackage Wp_Class/admin
- * @author     Your Name <email@example.com>
+ * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
 class Wp_Class_Admin {
 
