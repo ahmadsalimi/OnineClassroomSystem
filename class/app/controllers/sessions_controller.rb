@@ -61,6 +61,11 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+  # GET /csrf
+  def get_csrf
+    session[:_csrf_token]
+  end
+
   # POST /users/login
   def create
     logger.info "Support: #{session_params[:email]} is attempting to login."
