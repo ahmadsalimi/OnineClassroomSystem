@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
-class Wp_Class {
+class Wp_Classroom {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Wp_Class {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wp_Class_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Wp_Classroom_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -44,9 +44,9 @@ class Wp_Class {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $wp_class    The string used to uniquely identify this plugin.
+	 * @var      string    $wp_classroom    The string used to uniquely identify this plugin.
 	 */
-	protected $wp_class;
+	protected $wp_classroom;
 
 	/**
 	 * The current version of the plugin.
@@ -67,12 +67,12 @@ class Wp_Class {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'WP_CLASS_VERSION' ) ) {
-			$this->version = WP_CLASS_VERSION;
+		if ( defined( 'WP_CLASSROOM_VERSION' ) ) {
+			$this->version = WP_CLASSROOM_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->wp_class = 'wp-class';
+		$this->wp_classroom = 'wp-classroom';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Wp_Class {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wp_Class_Loader. Orchestrates the hooks of the plugin.
-	 * - Wp_Class_i18n. Defines internationalization functionality.
-	 * - Wp_Class_Admin. Defines all hooks for the admin area.
-	 * - Wp_Class_Public. Defines all hooks for the public side of the site.
+	 * - Wp_Classroom_Loader. Orchestrates the hooks of the plugin.
+	 * - Wp_Classroom_i18n. Defines internationalization functionality.
+	 * - Wp_Classroom_Admin. Defines all hooks for the admin area.
+	 * - Wp_Classroom_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Wp_Class {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-class-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-classroom-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-class-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-classroom-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-class-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-classroom-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-class-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-classroom-public.php';
 
-		$this->loader = new Wp_Class_Loader();
+		$this->loader = new Wp_Classroom_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wp_Class_i18n class in order to set the domain and to register the hook
+	 * Uses the Wp_Classroom_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Wp_Class {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wp_Class_i18n();
+		$plugin_i18n = new Wp_Classroom_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Wp_Class {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp_Class_Admin( $this->get_wp_class(), $this->get_version() );
+		$plugin_admin = new Wp_Classroom_Admin( $this->get_wp_classroom(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class Wp_Class {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wp_Class_Public( $this->get_wp_class(), $this->get_version() );
+		$plugin_public = new Wp_Classroom_Public( $this->get_wp_classroom(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -191,15 +191,15 @@ class Wp_Class {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_wp_class() {
-		return $this->wp_class;
+	public function get_wp_classroom() {
+		return $this->wp_classroom;
 	}
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Wp_Class_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Wp_Classroom_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

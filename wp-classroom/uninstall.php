@@ -22,7 +22,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
+ * @package    Wp_Classroom
  */
 
 // If uninstall not called from WordPress, then exit.

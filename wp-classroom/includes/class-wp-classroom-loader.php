@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
-class Wp_Class_Loader {
+class Wp_Classroom_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

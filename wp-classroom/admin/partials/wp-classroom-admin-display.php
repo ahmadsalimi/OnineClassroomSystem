@@ -8,8 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/admin/partials
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/admin/partials
  */
 ?>
 

@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
-class Wp_Class_i18n {
+class Wp_Classroom_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Wp_Class_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'wp-class',
+			'wp-classroom',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

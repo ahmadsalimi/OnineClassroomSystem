@@ -10,18 +10,18 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Wp_Class
+ * @package           Wp_Classroom
  *
  * @wordpress-plugin
  * Plugin Name:       WordPress Plugin Boilerplate
- * Plugin URI:        http://example.com/wp-class-uri/
+ * Plugin URI:        http://example.com/wp-classroom-uri/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            ahmadsalimi or Your Company
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wp-class
+ * Text Domain:       wp-classroom
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WP_CLASS_VERSION', '1.0.0' );
+define( 'WP_CLASSROOM_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-wp-class-activator.php
+ * This action is documented in includes/class-wp-classroom-activator.php
  */
-function activate_wp_class() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-class-activator.php';
-	Wp_Class_Activator::activate();
+function activate_wp_classroom() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-classroom-activator.php';
+	Wp_Classroom_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wp-class-deactivator.php
+ * This action is documented in includes/class-wp-classroom-deactivator.php
  */
-function deactivate_wp_class() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-class-deactivator.php';
-	Wp_Class_Deactivator::deactivate();
+function deactivate_wp_classroom() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-classroom-deactivator.php';
+	Wp_Classroom_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_wp_class' );
-register_deactivation_hook( __FILE__, 'deactivate_wp_class' );
+register_activation_hook( __FILE__, 'activate_wp_classroom' );
+register_deactivation_hook( __FILE__, 'deactivate_wp_classroom' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wp-class.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-wp-classroom.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-class.php';
  *
  * @since    1.0.0
  */
-function run_wp_class() {
+function run_wp_classroom() {
 
-	$plugin = new Wp_Class();
+	$plugin = new Wp_Classroom();
 	$plugin->run();
 
 }
-run_wp_class();
+run_wp_classroom();

@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Wp_Class
- * @subpackage Wp_Class/includes
+ * @package    Wp_Classroom
+ * @subpackage Wp_Classroom/includes
  * @author     ahmadsalimi <ahsa9978@gmail.com>
  */
-class Wp_Class_Activator {
+class Wp_Classroom_Activator {
 
 	/**
 	 * Short Description. (use period)
